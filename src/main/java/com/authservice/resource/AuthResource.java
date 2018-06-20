@@ -1,10 +1,5 @@
 package com.authservice.resource;
 
-import com.authservice.config.JwtTokenUtil;
-import com.authservice.model.AuthToken;
-import com.authservice.model.LoginUser;
-import com.authservice.model.User;
-import com.authservice.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,7 +7,17 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.authservice.config.JwtTokenUtil;
+import com.authservice.model.AuthToken;
+import com.authservice.model.LoginUser;
+import com.authservice.model.User;
+import com.authservice.service.IUserService;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController

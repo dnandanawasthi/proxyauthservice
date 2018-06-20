@@ -1,20 +1,22 @@
 package com.authservice.config;
 
-import com.authservice.model.User;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
+import static com.authservice.common.Constants.ACCESS_TOKEN_VALIDITY_SECONDS;
+import static com.authservice.common.Constants.SIGNING_KEY;
 
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.function.Function;
 
-import static com.authservice.common.Constants.ACCESS_TOKEN_VALIDITY_SECONDS;
-import static com.authservice.common.Constants.SIGNING_KEY;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+
+import com.authservice.model.User;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
 public class JwtTokenUtil implements Serializable {
